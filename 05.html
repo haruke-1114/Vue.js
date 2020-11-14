@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>D5</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <link rel="stylesheet" href="css/css1.css">
+    <style>
+
+    </style>
+</head>
+
+<body>
+    <div id='app'>
+        <section>
+            <div class="container">
+                <div class="title">
+                    <div class="input" id="title">
+                        {{ name }}你好，
+                        {{ sex }}性，{{ age }}歲 <br>
+                        {{ favor.length ? "喜歡" : " "}}
+                        {{ favor.join('、')}}，
+                        {{ member ? '已' : '未'}}成為頻道會員
+                    </div>
+                    <div class="menu">
+                        <table>
+                            <tr>
+                                <td class="title">姓名：</td>
+                                <td>
+                                    <!-- <input value="Rong"> -->
+                                    <input v-model="name">
+                                </td>
+                            </tr>
+                            <tr>
+                                <td class="title">性別：</td>
+                                <td>
+                                    <input type="radio" v-model="sex" value="男">男
+                                    <input type="radio" v-model="sex" value="女">女
+                                </td>
+                            </tr>
+                            <tr>
+                                <td class="title">年齡：</td>
+                                <td>
+                                    <select v-model="age">
+                                        <option>20歲以下</option>
+                                        <option selected>20~30歲之間</option>
+                                        <option>30~40歲之間</option>
+                                        <option>40歲以上</option>
+                                    </select>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td class="title">興趣：</td>
+                                <td>
+                                    <input type="checkbox" v-model="favor" value="睡覺" checked>睡覺
+                                    <input type="checkbox" v-model="favor" value="游泳" checked>游泳
+                                    <input type="checkbox" v-model="favor" value="旅遊" checked>旅遊
+                                    <input type="checkbox" v-model="favor" value="遊戲" checked>遊戲
+                                    <!-- checkbox儲存資料必須為陣列，不然會壞掉 -->
+                                </td>
+                            </tr>
+                            <tr>
+                                <td class="title">會員：</td>
+                                <td>
+                                    <input type="checkbox" v-model="member" checked>加入
+                                </td>
+                            </tr>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </div>
+
+
+</body>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/vue/2.5.17/vue.js"></script>
+<script src="JS/05.js"></script>
+<script>
+</script>
+
+</html>

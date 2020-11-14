@@ -1,0 +1,6 @@
+1.v-text = num, v-html = num, {{ num }}
+2.v-bind(:class/src等) = :class/:src
+3.v-if = "isShow" 條件成立/ v-else 條件不成立 
+4. v-on:click=@click
+5.v-model  .trim去頭尾空白
+6.

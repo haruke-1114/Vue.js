@@ -1,0 +1,31 @@
+#title {
+    /* height: 400px; */
+    width: 400px;
+    border: 1px #f2cccc solid;
+    background-color: burlywood;
+}
+
+img {
+    width: 300px;
+    height: 300px;
+}
+
+.left,
+.right {
+    display: inline-block;
+    font-size: 0;
+    padding: 1rem;
+    background-color: #555;
+}
+
+.left::before {
+    content: '<';
+    font-size: 3px;
+    color: #ffffff;
+}
+
+.right::before {
+    content: '>';
+    font-size: 3px;
+    color: #ffffff;
+}

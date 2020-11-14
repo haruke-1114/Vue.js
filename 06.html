@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>D5</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <link rel="stylesheet" href="css/css1.css">
+    <style>
+
+    </style>
+</head>
+
+<body>
+    <div id='app'>
+        <section>
+            <div class="container">
+                <div class="title">
+                    <div class="input"style="font-size: 0px;">
+
+                    </div>
+                    <select v-model="input.type">
+                        <option>01</option>
+                        <option>02</option>
+                        <option>03</option>
+                        <option>04</option>
+                        <option>04</option>
+                        <option>05</option>
+                        <option>06</option>
+                    </select>
+                    <input type="text"  v-model.trim="input.title" @keyup.enter="inputHandler">
+                    
+                    <div class="menu">
+                        <div class="menuItem" v-for="(item,index) in menu">
+                            <span class="number">{{ index + 1 }}</span>
+                            <span class="type">{{ item.type }}</span>
+                            <a href="item.link" target="vue-iron" class="title">{{item.title}}</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </div>
+
+</body>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/vue/2.5.17/vue.js"></script>
+<script src="JS/06.js"></script>
+
+
+</html>

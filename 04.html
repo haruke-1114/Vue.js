@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title></title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/vue/2.5.17/vue.js"></script>
+    <link rel="stylesheet" href="css/css1.css">
+    <style>
+
+    </style>
+</head>
+
+<body>
+    <div id="app">
+        <div class="container title mb-5 text-center">
+            <h1>{{ title }}</h1>
+            <img :src="today.src" class="img-fluid logo" alt="">
+        </div>
+        <div class="d-flex justify-content-center">
+            <!-- <a class="left" v-if="index > 0" @click="changeIndex(-1)"></a>   -->
+            <!--上下兩種寫法皆可-->
+            <a class="left" v-if="index > 0" v-on:click="changeIndex(-1)"></a>
+            <div class="p-3 bg-warning" style="display: inline-block;">
+                <span>第 {{ index+1 }} 張</span>
+                <span>「 {{ today.title }} 」</span>
+            </div>
+            <!-- <a class="right" v-if="index < total-1" @click="changeIndex(1)"></a> -->
+            <a class="right" v-if="index < total-1" v-on:click="changeIndex(1)"></a>
+        </div>
+
+    </div>
+
+
+    <script>
+        let data = {
+            title: '表情包大全',
+            index: 0,
+            menu: [
+                { type: '111', title: '照片01', link: 'javascript:;', src: 'img/01.jpg' },
+                { type: '222', title: '照片02', link: 'javascript:;', src: 'img/02.jpg' },
+                { type: '333', title: '照片03', link: 'javascript:;', src: 'img/03.jpg' },
+                { type: '444', title: '照片04', link: 'javascript:;', src: 'img/04.jpg' },
+                { type: '555', title: '照片05', link: 'javascript:;', src: 'img/05.jpg' },
+            ],
+        };
+
+        let vm = new Vue({
+            el: '#app',
+            data: data,
+            computed: {  //計算屬性
+                today() {
+                    return this.menu[this.index];
+                },
+                total() {
+                    return this.menu.length;
+                }
+            },
+            methods: {
+                changeIndex(change) {
+                    this.index = (this.index + change + this.total) % this.total;
+                    // this.index += change;
+                    // if (this.index < 0) {
+                    //     this.index = 0
+                    // } else if (this.index > this.menu.length - 1) {
+                    //     this.index = this.menu.length - 1
+                    // }
+                }
+            }
+        });
+
+    </script>
+</body>
+
+</html>
