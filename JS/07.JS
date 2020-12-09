@@ -24,19 +24,24 @@ let vm = new Vue({
   data: data,
   computed: {
     typeMenu() {
-      if (this.input.type == "all") {
-        return this.menu;
-      } else {
-        return this.menu.filter((item) => {
+      if (this.input.type != "all") {
+        return this.menu.filter(item => {
           return item.type == this.input.type;
         });
-      }
-    },
-    titleMenu() {
-        if (this.input.title) {
-        }else {
-          return this.typeMenu 
-        }
+      } else {
+          return this.menu
+        };
       },
-  },
+      titleMenu() {
+          if (this.input.title) {
+            return this.typeMenu.filter(item=>{
+              let content = item.title.toLowerCase(); 
+              let keyword = this.input.title.toLowerCase(); 
+              return content.indexOf(keyword) !=-1
+            })
+          }else {
+            return this.typeMenu 
+          }
+        },
+    }
 });
