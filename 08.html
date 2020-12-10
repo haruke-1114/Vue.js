@@ -19,14 +19,12 @@
                 <div class="title">
                     <div class="input">
                         <select v-model="input.type">
-                            <option>all</option>
-                            <option>01</option>
-                            <option>02</option>
-                            <option>03</option>
-                            <option>04</option>
-                            <option>04</option>
-                            <option>05</option>
-                            <option>06</option>
+                            <option :value='null'>all</option>
+                            <option v-for='item in typeList.sort'>{{item}}</option>
+                        </select>
+                        <select v-model="input.type">
+                            <option :value='null'>all</option>
+                            <option v-for='item in typeList.sort'>{{item}}</option>
                         </select>
                         <input type="text" v-model.trim="input.title">
 
@@ -45,6 +43,6 @@
 
 </body>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/vue/2.5.17/vue.js"></script>
-<script src="JS/07.js"> </script>
+<script src="JS/08.js"> </script>
 
 </html>
