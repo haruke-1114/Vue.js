@@ -2,7 +2,7 @@
 <html>
 
 <head>
-    <title>D7</title>
+    <title>D8</title>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
@@ -20,20 +20,17 @@
                     <div class="input">
                         <select v-model="input.type">
                             <option :value='null'>all</option>
-                            <option v-for='item in typeList.sort'>{{item}}</option>
+                            <option v-for='item in typeList.sort'>{{ item }}</option>
                         </select>
-                        <select v-model="input.type">
+                        <select v-model="input.title">
                             <option :value='null'>all</option>
-                            <option v-for='item in typeList.sort'>{{item}}</option>
+                            <option v-for='item in titleList.sort'>{{ item }}</option>
                         </select>
                         <input type="text" v-model.trim="input.title">
 
-                        <div class="menu test">
-                            <div class="menuItem" v-for="(item,index) in titleMenu">
-                                <span class="number">{{ index + 1 }}</span>
-                                <span class="type">{{ item.type }}</span>
-                                <a href="item.link" target="vue-iron" class="title">{{item.title}}</a>
-                            </div>
+                        <div class="menuItem" v-if="content">
+                            <span class="number">{{ content.index + 1 }}</span>
+                            <a :href="content.link" target="vue-iron" class="title">{{ content.link }}</a>
                         </div>
                     </div>
                 </div>

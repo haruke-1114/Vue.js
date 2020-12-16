@@ -23,7 +23,7 @@ let vm = new Vue({
   el: "#app",
   data: data,
   computed: {
-    typelist() {
+    typeList() {
       let obj = {
         sort: [],
         map: {},
@@ -43,5 +43,20 @@ let vm = new Vue({
       });
       return obj;
     },
+    titleList() {
+      this.input.title = null;
+      if (this.input.type) {
+        return this.typeList.map[this.input.type];
+      } else {
+        return [];
+      }
+    },
+    content() {
+      if (this.input.title) {
+        return this.titleList.map[this.input.title];
+      } else {
+        return null;
+      }
+    }
   },
 });
