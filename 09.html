@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>D9</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <link rel="stylesheet" href="css/css1.css">
+    <style>
+
+    </style>
+</head>
+
+<body>
+    <div id='app'>
+        <section>
+            <div class="container">
+                <h1>{{ title }}</h1>
+            </div>
+            <div class="description">
+                <a class="=arrow left" v-if="index > 0" @click="changeIndex(-1)"></a>
+
+                <div class="menuItem displayInline" v-if="index == 1" v-for="(item,i) in menu">
+                    <span class="number">{{ i + 1 }}</span>
+                    <span class='type'>{{ item.type }}</span>
+                    <a :href="ltem.link" target="vue-iron" class="title">{{ item.title }}</a>
+                </div>
+                <div>
+                    <a class="right" v-if="index < total-1" @click="changeIndex(1)"></a>
+                </div>
+            </div>
+        </section>
+    </div>
+
+</body>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/vue/2.5.17/vue.js"></script>
+<script src="JS/09.js"> </script>
+
+</html>

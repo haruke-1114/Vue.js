@@ -22,10 +22,17 @@ img {
     content: '<';
     font-size: 3px;
     color: #ffffff;
+    display: inline;
 }
 
 .right::before {
     content: '>';
     font-size: 3px;
     color: #ffffff;
+    display: inline;
+}
+
+.displayInline{
+    display: inline;
+    /* display: block; */
 }
