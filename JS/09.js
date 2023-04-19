@@ -1,5 +1,5 @@
 let data = {
-    title:"發大財",
+    title:"你好000",
     index:0,
     menu: [
       { type: "01", title: "011", link: "javascript:;" },
